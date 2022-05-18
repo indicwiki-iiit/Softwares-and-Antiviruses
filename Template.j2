@@ -1,0 +1,339 @@
+{%- macro infobox(data) -%}
+{{"{{Infobox"}}
+{{"|  title = "+Name+"\n" }}
+
+{%- if image_files!='nan' -%}
+{{"|  image = [[File:"+image_files+"|200px|alt="+Name+"]]\n"
+   }}
+{%- else -%}
+{%- endif -%}
+
+{%- if Original_authors!='nan' -%}
+{{"|  label1 = రచయితలు :\n|   data1 = "+Original_authors+"\n"
+   }}
+{%- else -%}
+{%- endif -%}
+
+{%- if Developers!='nan' -%}
+{{"|  label2 = అభివ్రుధిచేసినవారు :\n|   data2 = "+Developers+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if service_name!='nan' -%}
+{{"|  label3 = అధికారిక పేరు :\n|   data3 = "+service_name+"\n"
+   }}
+{%- else -%}
+{%- endif -%}
+
+{%- if preview_release!='nan' -%}
+{{"|  label4 = ప్రివ్యూ_విడుదల :\n|   data4 = "+preview_release+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if Initial_release!='nan' -%}
+{{"|  label5 = ప్రారంభ విడుదల :\n|   data5 = "+Initial_release+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if Stable_version!='nan' -%}
+{{"|  label6 = స్థిరమైన సంస్కరణ :\n|   data6 = "+Stable_version+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if Stable_version_release_date!='nan' -%}
+{{"|  label7 = స్థిరమైన వెర్షన్ విడుదల :\n|   data7 = "+Stable_version_release_date+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if platform!='nan' -%}
+{{"|  label8 = ప్లాటుఫారమ్ :\n|   data8 = "+platform+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if middleware!='nan' -%}
+{{"|  label9 = మిడిల్‌వేర్ :\n|   data9 = "+middleware+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if engine!='nan' -%}
+{{"|  label10 = సాధనం :\n|   data10 = "+engine+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if os!='nan' -%}
+{{"|  label11 = ఆపరేటింగ్ సిస్టమ్స్ :\n|   data11 = "+os+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if Available_in!='nan' -%}
+{{"|  label12 = అందుబాటులో ఉన్న భాషలు :\n|   data12 = "+Available_in+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if type!='nan' -%}
+{{"|  label13 = రకం :\n|   data13 = "+type+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if written_in!='nan' -%}
+{{"|  label14 = వ్రాయబడినది :\n|   data14 = "+written_in+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if size!='nan' -%}
+{{"|  label15 = పరిమాణం :\n|   data15 = "+size+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if License!='nan' -%}
+{{"|  label16 = లైసెన్స్ :\n|   data16 = "+License+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if repository!='nan' -%}
+{{"|  label17 = సురక్షిత స్థానం :\n|   data17 = "+repository+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{%- if website!='nan' -%}
+{{"|  label18 = వెబ్‌సైట్ :\n|   data18 = "+website+"\n"
+   }}
+
+{%- else -%}
+{%- endif -%}
+
+{{"}}\n\n"}}
+
+{%- endmacro -%}
+{{- infobox(data) -}}
+
+{%- macro info(data) -%}
+
+{{"=="+Name+"=="}}
+{# ##}
+
+{{[Name + " ఇది ఒక కంప్యూటర్ సాఫ్ట్వేర్.",
+Name + " అనేది ఒక సాఫ్ట్వేర్ ."]  | random}}
+
+
+{%- if Original_authors!='nan' -%}
+{{[Original_authors + " వీరు దీని రచయితలు. "  , " దీనిని రచించిన వారు " + Original_authors + "."] | random}}
+{%- else -%}
+{%- endif -%}
+
+{%- if Developers!='nan' -%}
+{{ [Developers + " దీనిని అభివృద్ధి చేసారు." , "ఈ సాఫ్ట్వేర్ ను " +Developers + " అభివృద్ధి చేసారు ."]  | random}}
+{%- else -%}
+{%- endif -%}
+
+ {%- if repository!='nan' -%}
+{{ ["దీని సురక్షిత స్థానం  "  + repository + " వద్ద ఉన్నది.",  repository + " ఇది దీని సురక్షిత స్థానం."]   |  random}}
+{%- else -%}
+{%- endif -%}
+
+ {%- if platform!='nan' -%}
+{{[platform + " అనే ప్లాట్‌ఫారమ్ ను ఈ సాఫ్ట్‌వేర్ ఉపయోగిస్తుంది.",
+"ఈ సాఫ్ట్‌వేర్ ఉపయోగించె ప్లాటుఫారమ్  "  + platform +"."] | random}}
+{%- else -%}
+{%- endif -%}
+
+{%- if middleware!='nan' -%}
+ {{["దీని కోసం " +middleware + " అనే మిడిల్‌వేర్ ని ఉపయోగిస్తారు." ,
+ middleware + "అనే మిడిల్‌వేర్ ఈ సాఫ్ట్వేర్ ను ఉపయోగించడంలో సహాయపడుతుంది."]   |  random}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if engine!='nan' -%}
+  {{[ engine + " సాధనాన్ని దీని తయారీ  కోసం వాడారు." ,
+  "ఈ సాఫ్ట్‌వేర్ కోసం ఉపయోగించిన సాధనం " + engine +"."
+ ]   |  random}}
+ {%- else -%}
+ {%- endif -%}
+
+{%- if os!='nan' -%}
+
+{{[ "ఈ సాఫ్ట్‌వేర్ ఉపయోగించగల నిర్వాహక వ్యవస్థలు "  + os +"." ,
+os + " ఈ ఈ నిర్వాహక వ్యవస్థలకు ఇది అందుబాటులో ఉంది. "
+ ]   |  random}}
+{%- else -%}
+{%- endif -%}
+
+{%- if Available_in!='nan' -%}
+{{[ "ఇది "+ Available_in + " భాషలలో అందుబాటులో ఉంది." ,
+"ఈ  సాఫ్ట్‌వేర్ మనకు " + Available_in + " భాషలలో లభిస్తుంది."
+ ]   |  random}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if type!='nan' -%}
+ {{[ "ఈ సాఫ్ట్‌వేర్ " + type + " కు సంబంధించింది .",
+ "ఇది " +type + " సాఫ్ట్‌వేర్."
+ ]   |  random}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if License!='nan' -%}
+   {{["దీని  లైసెన్స్ " +License+ " రూపంలో అందుబాటులో ఉన్నది." ,
+ License + " ఇది దీని లైసెన్స్. "]   |  random }}
+ {%- else -%}
+ {%- endif -%}
+ 
+
+
+{%- if included_with!='nan' -%}
+ {{["ఈ సాఫ్ట్‌వేర్‌లో చేర్చబడిన సాఫ్ట్‌వేర్‌లు " +included_with+".",
+ "దీనిలో  "+ included_with + " అను సాఫ్ట్‌వేర్‌లు కూడా జోడింపబడ్డాయి." ]| random }}
+ {%- else -%}
+ {%- endif -%}
+  
+ 
+ {%- endmacro -%}
+ 
+{%- macro intro(data) -%}
+{# ##}
+{# ##}
+{% if Initial_release!=nan or preview_release!=nan or written_in!=nan or whats_new!=nan or description!=nan or Stable_version!=nan or Stable_version_release_date!=nan or website!=nan -%}
+ {{"==పరిచయం==\n"}}
+
+{# ##}
+{%- else -%}
+{%- endif -%}
+
+ 
+ {%- if Initial_release!='nan' -%}
+ {{["ఈ సాఫ్ట్వేర్ " + Initial_release + " లో మొదటి సారి విడుదల చేయబడింది. ",
+ " మొట్ట మొదటి సారి ఈ సాఫ్ట్వేర్ " + Initial_release + " లో విడుదల చేయబడింది."]| random}}
+{%- else -%}
+ {%- endif -%}
+ 
+ {%- if preview_release!='nan' -%}
+ {{["దీని  పూర్వ ప్రదర్శన " + preview_release + " న   జరిగింది.",
+" ఈ సాఫ్ట్‌వేర్  పూర్వ ప్రదర్శన " +  preview_release +" న   జరిగింది." ]|random}}
+{%- else -%}
+{%- endif -%}
+
+{%- if written_in!='nan' -%}
+ {{["ఈ సాఫ్ట్‌వేర్‌ను అభివృద్ధి చేయడంలో " + written_in + " భాషలు ఉపయోగించారు .",
+ written_in + " భాషలు ఉపయోగించి ఈ సాఫ్ట్వేర్ ను అభివృద్ధి చేయడం జరిగింది."]|random}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if whats_new!='nan' -%}
+ {{["ఈ సాఫ్ట్వేర్ కొత్త సంస్కరణలో " + whats_new + " వంటి అదనపు హంగులను జోడించారు.",
+ "ఈ సాఫ్ట్వేర్ లో కొత్తగా " + whats_new + " ని  చెర్చారు."]|random}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if description!='nan' -%}
+ {{description + "."}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if Stable_version!='nan' -%}
+ {{["దీని స్థిరమైన సంస్కరణ " + Stable_version + ".",
+Stable_version + " ఇది దీని స్థిరమైన సంస్కరణ ."]|random}}
+{%- else -%} 
+ {%- endif -%}
+ 
+ {%- if Stable_version_release_date!='nan' -%}
+ {{[Stable_version_release_date + " న ఈ సాఫ్ట్వేర్ స్థిరమైన వెర్షన్ విడుదల చేసారు.",
+  " స్థిరమైన వెర్షన్ విడుదల చేయబడిన తేదీ "+ Stable_version_release_date + "."]|random}}
+ {%- else -%}
+{%- endif -%}
+
+{%- if website!='nan' -%}
+{{["ఈ సాఫ్ట్‌వేర్ అధికారిక వెబ్‌సైట్ " + website+".",
+website + " ఇది దీనికి  సంబందిత అధికారిక వెబ్‌సైట్." ]| random }}
+{%- else -%}
+{%- endif -%}
+
+{%- if service_name!='nan' -%}
+ {{["ఈ వెబ్‌సైట్ అందించే సేవల అధికారిక పేరు " + service_name + ".",
+ "ఈ సాఫ్ట్‌వేర్ వెబ్‌సైట్ సర్వీస్ పేరు " + service_name + "."]|random}}
+ {%- else -%}
+{%- endif -%}
+{{"\n\n"}}
+ 
+ {%- endmacro -%}
+ 
+{%- macro additional_req(data) -%}
+
+{# ##}
+ {{"==అదనపు సమాచారం==\n"}}
+{# ##}
+ {%- if additional_requirements!='nan' -%}
+ 
+ {{["ఈ సాఫ్ట్వేర్ పనిచేయటానికి, "  + additional_requirements + " ఇవి అవసరం.",
+ " ఈ సాఫ్ట్‌వేర్‌ను ఇన్స్టాల్  చెయ్యడానికి " +  additional_requirements + " కావలిసివుంటుంది."]|random}}
+ {%- else -%}
+ {{"ఈ సాఫ్ట్‌వేర్‌ను ఇన్స్టాల్  చెయ్యడానికి  అదనపు ఆవశ్యకతలు ఏవీ అవసరం లేదు ."}}
+ 
+ {% endif -%}
+ 
+   {%- if related_softwares!='nan' -%}
+ {{[related_softwares + " ఇవి దీనికి సంబంధిత ఇతర సాఫ్ట్‌వేర్‌లు.",
+  "దిని తో పోలియున్న సాఫ్ట్‌వేర్‌లు " + related_softwares +"."]| random}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if size!='nan' -%}
+ {{["ఈ రకమైన సాఫ్ట్‌వేర్ ఇతర సాఫ్ట్‌వేర్‌ల వలె కాకుండా " + size + " పరిమాణాన్ని మాత్రమే ఉపయోగిస్తుంది.",
+ size + " ఇది ఈ సాఫ్ట్‌వేర్ ఉపయోగించె పరిమాణం."]    |    random}}
+ {%- else -%}
+ {%- endif -%}
+ 
+ {%- if as_of!='nan' -%}
+{{["ఈ సమాచారం " +as_of + " నాటికి నవీకరించబడింది.",
+ "ఈ సమాచారం" + as_of + " నాటికి తాజాగా ఉంది."]    |random}}
+ {%- else -%}
+ {%- endif -%}
+ {{"\n\n"}}
+ {%- endmacro -%}
+ 
+ {{- info(data) -}}
+ {{- intro(data) -}}
+ {{- additional_req(data) -}}
+ 
+
+
+{%- macro links(data) -%}
+{{"==ప్రస్తావనలు==\n"}}
+{{references_}}
+{# ##}
+{{"==బాహ్య లింకులు==\n"}}
+{{external_Links}}
+{# ##}
+{{"==వర్గం==\n"}}
+{{category_}}
+{%- endmacro -%}
+{{- links(data) -}}
